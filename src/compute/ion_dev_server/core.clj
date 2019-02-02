@@ -3,8 +3,7 @@
     [com.stuartsierra.component :as component]
     [ring.middleware.reload :as reload]
     [ring.middleware.cors :as cors]
-    [org.httpkit.server :as server]
-    [dev.config]))
+    [org.httpkit.server :as server]))
 
 (def the-handler)
 
