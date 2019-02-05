@@ -18,8 +18,10 @@
 (defn start
   [handler]
   (alter-var-root #'the-handler (constantly handler))
-  (server/run-server #'handler-with-reload
-                     {:port 8880}))
+  (let [server-opts {:port 8880}]
+    (println (str "starting server on " (:port server-opts)))
+    (server/run-server #'handler-with-reload
+                       server-opts)))
 
 (defn stop
   [server]
